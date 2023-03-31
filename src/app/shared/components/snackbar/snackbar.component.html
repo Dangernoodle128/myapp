@@ -1,0 +1,9 @@
+<span class="example-pizza-party" matSnackBarLabel>
+ {{data.msg}}
+</span>
+<span matSnackBarActions>
+  <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">
+    <mat-icon *ngIf="data.act!='close'">{{data.act}}</mat-icon>
+    <span *ngIf="data.act=='close'">மூடு</span>
+  </button>
+</span>

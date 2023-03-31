@@ -1,0 +1,28 @@
+<div >
+  <mat-toolbar color="custom">
+    <span>Angular Training</span>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+      <a routerLink="/home/work1" mat-button>Form</a>
+      <a routerLink="/home/table" mat-button>Table</a>
+      <a routerLink="/home/snack" mat-button>Snack Bar</a>
+      <a routerLink="/home/pipe" mat-button>Pipe</a>
+    </div>
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button (click)="sidenav.toggle()">Show Side Menu</button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav #sidenav fxLayout="column">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+        <a routerLink=" " mat-button>About</a>
+        <a routerLink=" " mat-button>FAQ</a>
+      </div>
+    </mat-sidenav>
+
+  </mat-sidenav-container>
+</div>
+<router-outlet></router-outlet>

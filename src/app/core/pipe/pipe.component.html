@@ -1,0 +1,44 @@
+<div class="body" fxLayout="row" fxLayoutAlign="center center">
+  <div class="m2" *ngIf="this.show">
+    <form class="example-form">
+      <br /><br /><br />
+      <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput (input)="updateSearch($event)" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <input matInput (input)="replace($event)" />
+      </mat-form-field><br><br>
+      <div fxLayoutAlign="center center">
+        <button mat-raised-button (click)="Onrep()">Replace</button>
+      </div>
+    </form>
+  </div>
+  <div class="main" fxLayout="column" fxLayoutAlign="start">
+    <br/><br/>
+    <ol>
+      <div *ngFor="let list of results" class="list">
+        <li [innerHTML]="list.summary | find : searchterm : replaceterm : rep"></li>
+        <mat-divider></mat-divider>
+      </div>
+    </ol>  <br /><br />
+    <div id="button" fxLayout="row" fxFlex="100%" fxLayoutAlign="space-between center">
+      <div class="add" ><mat-form-field class="example-full-width2" appearance="outline">
+        <input matInput [(ngModel)]="additem" />
+      </mat-form-field></div>
+      <div class="buttons" fxLayoutGap="15px" >
+      <button mat-fab aria-label="Example icon button with a heart icon" (click)="OnAdd()" >
+        <mat-icon>add</mat-icon>
+      </button>
+      <button
+        mat-fab
+        class="button"
+        color="primary"
+        aria-label="Example icon button with a delete icon"
+        (click)="Onshow()"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    </div>
+  </div>
+</div>

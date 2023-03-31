@@ -1,0 +1,27 @@
+<div class="main" fxLayoutAlign="center center">
+  <div class="main1" fxLayout="column" fxFlex="40%" fxFlex.lt-md="100%">
+    <br><br>
+    <div fxLayoutAlign="center">
+      <h1 id="h1">Login </h1></div><br><br>
+    <form>
+      <div class="o1" fxLayout="column" fxLayout.lt-md="column" fxLayoutGap="20px">
+        <div class="one">
+            <input placeholder="Username" class="input" name="text" type="text">
+        </div><br>
+         <div class="two" *ngIf="show" >
+            <input type="password" placeholder="Password" class="input" name="text" />
+        </div>
+      </div><br><br>
+      <div fxLayout="row" fxLayoutGap="10px">
+      <label class="container">
+        <input type="checkbox" (change)="toggle($event)">
+        <div class="checkmark"></div>
+      </label><span id="la">Login Anonymously !!!</span></div>
+      <br><br>
+      <div fxLayoutAlign="center center"><button>
+        <span>Login</span>
+      </button></div>
+    </form><br><br><br>
+  </div>
+</div>
+
